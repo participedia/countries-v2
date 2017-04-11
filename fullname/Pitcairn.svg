@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- (c) ammap.com | SVG map of Pitcairn Islands - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="country-map" viewbox="1.11 0.0 797.78 359.33">
+ <defs>
+  <style type="text/css">
+   path.land {stroke: #d8382c; fill: #d8382c;}
+  </style>
+  <amcharts:ammap projection="mercator" leftlongitude="-130.1289367676" toplatitude="-24.3120593938" rightlongitude="-128.2818603516" bottomlatitude="-25.0843551349">
+  </amcharts:ammap>
+  <!-- All areas are listed in the line below. You can use this list in your script. -->
+  <!--{id:"PN"}-->
+ </defs>
+ <g>
+  <path id="PN" title="Pitcairn Islands" class="land" d="M8.3,359.33L16.31,357.38L6.83,350.19L1.11,354.33L8.3,359.33zM795.13,0L776.86,3.67L772.42,11.78L771.38,21.92L780.05,37L798.89,42.69L792.7,8.97L795.13,0z">
+  </path>
+ </g>
+</svg>

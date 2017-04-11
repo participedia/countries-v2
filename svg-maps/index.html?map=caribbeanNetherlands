@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link rel="icon" type="image/x-icon" href="https://www.amcharts.com/favicon.ico"/>
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+<script>
+	if ( screen.width >= 768 && screen.width <= 1136 ) {
+		var ratio = Math.round( screen.width / 13 ) / 100;
+		document.getElementById( "viewport" ).setAttribute( "content", "width=1300, initial-scale=" + ratio );
+	}
+</script>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.amcharts.com/xmlrpc.php">
+<title>Free SVG Maps - amCharts</title>
+ 
+<link rel="canonical" href="https://www.amcharts.com/svg-maps/"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Free SVG Maps - amCharts"/>
+<meta property="og:description" content="&nbsp;"/>
+<meta property="og:url" content="https://www.amcharts.com/svg-maps/"/>
+<meta property="og:site_name" content="amCharts"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="&nbsp;"/>
+<meta name="twitter:title" content="Free SVG Maps - amCharts"/>
+ 
+<link rel='dns-prefetch' href='//s.w.org'/>
+<link rel="alternate" type="application/rss+xml" title="amCharts &raquo; Feed" href="https://www.amcharts.com/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="amCharts &raquo; Comments Feed" href="https://www.amcharts.com/comments/feed/"/>
+<link rel='stylesheet' id='amcharts2-style-css' href='https://www.amcharts.com/wp-content/themes/amcharts2/css/main.css?ver=20170308-01' type='text/css' media='all'/>
+<link rel='stylesheet' id='amcharts2-style-demo-css' href='https://www.amcharts.com/wp-content/themes/amcharts2/css/demo.css?ver=20170308-01' type='text/css' media='all'/>
+<link rel='https://api.w.org/' href='https://www.amcharts.com/wp-json/'/>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.amcharts.com/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.amcharts.com/wp-includes/wlwmanifest.xml"/>
+<meta name="generator" content="WordPress 4.7.3"/>
+<link rel='shortlink' href='https://www.amcharts.com/?p=7030'/>
+<link rel="alternate" type="application/json+oembed" href="https://www.amcharts.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.amcharts.com%2Fsvg-maps%2F"/>
+<link rel="alternate" type="text/xml+oembed" href="https://www.amcharts.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.amcharts.com%2Fsvg-maps%2F&#038;format=xml"/>
+<!--[if lt IE 9]>
+  <script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts2/js/html5shiv.min.js?ver=20170308-01'></script>
+  <script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts2/js/respond.min.js?ver=20170308-01'></script>
+  <![endif]-->
+</head>
+<body class="page-template-default page page-id-7030">
+<div id="page" class="site">
+<header id="masthead" class="site-header" role="banner">
+<div class="site-branding">
+<a href="https://www.amcharts.com/" id="logo" rel="home">amCharts</a>
+<a href="https://www.amcharts.com/" id="amcharts" rel="home" class="trans-all">amCharts</a>
+</div> 
+<a class="menu-toggle" data-controls="site-navigation" aria-controls="primary-menu" aria-expanded="false">Primary Menu</a>
+<nav id="site-navigation" class="main-navigation trans-pos-horiz" role="navigation">
+<div class="menu-main-menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-25"><a href="https://www.amcharts.com/products/">Products</a>
+<ul class="sub-menu">
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="https://www.amcharts.com/javascript-charts/"><i class="icon icon-charts"></i>JavaScript <strong>Charts</strong></a></li>
+<li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="https://www.amcharts.com/stock-chart/"><i class="icon icon-stock"></i>JavaScript Stock <strong>Chart</strong></a></li>
+<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://www.amcharts.com/javascript-maps/"><i class="icon icon-maps"></i>JavaScript <strong>Maps</strong></a></li>
+<li id="menu-item-41" class="overall menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a href="https://www.amcharts.com/products/">Show all products and tools</a></li>
+</ul>
+</li>
+<li id="menu-item-137" class="demo menu-item menu-item-type-demo menu-item-object-cpt_archive menu-item-137"><a href="https://www.amcharts.com/demos/">Demos</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://www.amcharts.com/download/">Download</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://www.amcharts.com/online-store/">Buy</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="https://www.amcharts.com/support/">Support</a></li>
+<li id="menu-item-6949" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6949"><a href="https://www.amcharts.com/knowledge-base/">Docs</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="https://www.amcharts.com/resources/">Resources</a></li>
+<li id="menu-item-7136" class="social md-only menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7136"><a href="#">Find us on</a>
+<ul class="sub-menu">
+<li id="menu-item-7137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7137"><a href="https://www.facebook.com/amcharts"><i class="icon icon-facebook" title="Facebook"></i></a></li>
+<li id="menu-item-7138" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7138"><a href="https://www.twitter.com/amcharts"><i class="icon icon-twitter" title="Twitter"></i></a></li>
+<li id="menu-item-7139" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7139"><a href="https://plus.google.com/+amcharts/"><i class="icon icon-google" title="Google+"></i></a></li>
+<li id="menu-item-7140" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7140"><a href="https://www.linkedin.com/company/amcharts"><i class="icon icon-linkedin" title="LinkedIn"></i></a></li>
+</ul>
+</li>
+</ul></div> </nav> 
+<div class="header-tools">
+<form role="search" method="get" class="search-form" action="https://www.amcharts.com/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s"/>
+</label>
+<input type="submit" class="search-submit" value="Search"/>
+</form> <div class="share-this" role="navigation">
+<a class="share-this-toggle trans-all">Click to share this page</a>
+<div class="share-this-content">
+Share<span class="md-hide"> this on</span> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.amcharts.com%2Fsvg-maps%2F%3Fmap%3DcaribbeanNetherlands" onclick="javascript:window.open( this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon icon-facebook2 smaller hide-text trans-all">Share this on Facebook</i></a>
+<a href="https://twitter.com/intent/tweet?text=Free+SVG+Maps+-+amCharts&url=https%3A%2F%2Fwww.amcharts.com%2Fsvg-maps%2F%3Fmap%3DcaribbeanNetherlands&via=amcharts"><i class="icon icon-twitter2 smaller hide-text trans-all">Share this on Twitter</i></a>
+<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.amcharts.com%2Fsvg-maps%2F%3Fmap%3DcaribbeanNetherlands" onclick="javascript:window.open( this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon icon-google2 smaller hide-text trans-all">Share this on Google+</i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.amcharts.com%2Fsvg-maps%2F%3Fmap%3DcaribbeanNetherlands&summary=Free+SVG+Maps+-+amCharts&source=amcharts" onclick="javascript:window.open( this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon icon-linkedin2 smaller hide-text trans-all">Share this on LinedIn</i></a>
+<a href="mailto:?subject=Free+SVG+Maps+-+amCharts&body=https%3A%2F%2Fwww.amcharts.com%2Fsvg-maps%2F%3Fmap%3DcaribbeanNetherlands&via=amcharts"><i class="icon icon-mail2 smaller hide-text trans-all">Share this via email</i></a>
+</div>
+</div> </div>
+<a href="https://live.amcharts.com/" id="editor-link">Live Editor</a>
+</header> 
+<div id="content" class="site-content">
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
+<article id="post-7030" class="post-7030 page type-page status-publish hentry">
+<header class="entry-header hero">
+<div class="content-col">
+<div class="row">
+<div class="col-md-4">
+<h1 class="entry-title">Free SVG Maps</h1>
+</div>
+<div class="col-md-6 intro">
+<p>Welcome to our SVG map directory! Use the list below to select a map you need. All maps come in two level of details: High and Low.</p>
+<p>All maps are available for free for non-commercial use under <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>. For commercial use please consider acquiring an <a title="JavaScript Maps" href="https://www.amcharts.com/javascript-maps/">amMap JavaScript Maps</a> license.</p>
+</div>
+</div>
+</div>
+</header> 
+<div class="entry-content content-col">
+<p>&nbsp;</p>
+<div class="row">
+<div class="col-md-6 col-sm-12">
+<h2>Caribbean Netherlands</h2>
+</div>
+<div class="col-md-6 col-sm-12 right"> <a href="https://www.amcharts.com/lib/3/maps/svg/caribbeanNetherlandsHigh.svg" download="caribbeanNetherlandsHigh.svg" class="button"><i class="icon icon-download2 smaller"></i> High detail (54K)</a> <a href="https://www.amcharts.com/lib/3/maps/svg/caribbeanNetherlandsLow.svg" download="caribbeanNetherlandsLow.svg" class="button"><i class="icon icon-download2 smaller"></i> Low detail (1.3K)</a> </div>
+</div>
+<div class="demo-theme-dark row">
+<div class="col-md-12 demo-block rounded padding demo-background margin-bottom-big">
+<div id="chartdiv" style="height: 500px;"></div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-3 col-md-3 col-xs-6">
+<ul>
+<li><a title="Afghanistan" href="https://www.amcharts.com/svg-maps/?map=afghanistan">Afghanistan</a></li>
+<li><a title="Albania" href="https://www.amcharts.com/svg-maps/?map=albania">Albania</a></li>
+<li><a title="Algeria" href="https://www.amcharts.com/svg-maps/?map=algeria">Algeria</a></li>
+<li><a title="American Samoa" href="https://www.amcharts.com/svg-maps/?map=americanSamoa">American Samoa</a></li>
+<li><a title="Andorra" href="https://www.amcharts.com/svg-maps/?map=andorra">Andorra</a></li>
+<li><a title="Angola" href="https://www.amcharts.com/svg-maps/?map=angola">Angola</a></li>
+<li><a title="Antigua and Barbuda" href="https://www.amcharts.com/svg-maps/?map=antiguaBarbuda">Antigua and Barbuda</a></li>
+<li><a title="Argentina" href="https://www.amcharts.com/svg-maps/?map=argentina">Argentina</a></li>
+<li><a title="Armenia" href="https://www.amcharts.com/svg-maps/?map=armenia">Armenia</a></li>
+<li><a title="Aruba" href="https://www.amcharts.com/svg-maps/?map=aruba">Aruba</a></li>
+<li><a title="Australia" href="https://www.amcharts.com/svg-maps/?map=australia">Australia</a></li>
+<li><a title="Austria" href="https://www.amcharts.com/svg-maps/?map=austria">Austria</a></li>
+<li><a title="Azerbaijan" href="https://www.amcharts.com/svg-maps/?map=azerbaijan">Azerbaijan</a></li>
+<li><a title="The Bahamas" href="https://www.amcharts.com/svg-maps/?map=bahamas">The Bahamas</a></li>
+<li><a title="Bahrain" href="https://www.amcharts.com/svg-maps/?map=bahrain">Bahrain</a></li>
+<li><a title="Bangladesh" href="https://www.amcharts.com/svg-maps/?map=bangladesh">Bangladesh</a></li>
+<li><a title="Belarus" href="https://www.amcharts.com/svg-maps/?map=belarus">Belarus</a></li>
+<li><a title="Belgium" href="https://www.amcharts.com/svg-maps/?map=belgium">Belgium</a></li>
+<li><a title="Belize" href="https://www.amcharts.com/svg-maps/?map=belize">Belize</a></li>
+<li><a title="Benin" href="https://www.amcharts.com/svg-maps/?map=benin">Benin</a></li>
+<li><a title="Bermuda" href="https://www.amcharts.com/svg-maps/?map=bermuda">Bermuda</a></li>
+<li><a title="Bhutan" href="https://www.amcharts.com/svg-maps/?map=bhutan">Bhutan</a></li>
+<li><a title="Bolivia" href="https://www.amcharts.com/svg-maps/?map=bolivia">Bolivia</a></li>
+<li><a title="Bosnia-Herzegovina Cantons" href="https://www.amcharts.com/svg-maps/?map=bosniaHerzegovinaCantons">Bosnia-Herzegovina Cantons</a></li>
+<li><a title="Bosnia-Herzegovina Regions" href="https://www.amcharts.com/svg-maps/?map=bosniaHerzegovinaRegions">Bosnia-Herzegovina Regions</a></li>
+<li><a title="Botswana" href="https://www.amcharts.com/svg-maps/?map=botswana">Botswana</a></li>
+<li><a title="Brazil" href="https://www.amcharts.com/svg-maps/?map=brazil">Brazil</a></li>
+<li><a title="British Virgin Islands" href="https://www.amcharts.com/svg-maps/?map=britishVirginIslands">British Virgin Islands</a></li>
+<li><a title="Brunei Darussalam" href="https://www.amcharts.com/svg-maps/?map=bruneiDarussalam">Brunei Darussalam</a></li>
+<li><a title="Bulgaria" href="https://www.amcharts.com/svg-maps/?map=bulgaria">Bulgaria</a></li>
+<li><a title="Burkina Faso" href="https://www.amcharts.com/svg-maps/?map=burkinaFaso">Burkina Faso</a></li>
+<li><a title="Burundi" href="https://www.amcharts.com/svg-maps/?map=burundi">Burundi</a></li>
+<li><a title="Cambodia" href="https://www.amcharts.com/svg-maps/?map=cambodia">Cambodia</a></li>
+<li><a title="Cameroon" href="https://www.amcharts.com/svg-maps/?map=cameroon">Cameroon</a></li>
+<li><a title="Canada" href="https://www.amcharts.com/svg-maps/?map=canada">Canada</a></li>
+<li><a title="Cape Verde" href="https://www.amcharts.com/svg-maps/?map=capeVerde">Cape Verde</a></li>
+<li><a title="Caribbean Netherlands" href="https://www.amcharts.com/svg-maps/?map=caribbeanNetherlands">Caribbean Netherlands</a></li>
+<li><a title="Cayman Islands" href="https://www.amcharts.com/svg-maps/?map=caymanIslands">Cayman Islands</a></li>
+<li><a title="Central African Republic" href="https://www.amcharts.com/svg-maps/?map=centralAfricanRepublic">Central African Republic</a></li>
+<li><a title="Chad" href="https://www.amcharts.com/svg-maps/?map=chad">Chad</a></li>
+<li><a title="Channel Islands" href="https://www.amcharts.com/svg-maps/?map=channelIslands">Channel Islands</a></li>
+<li><a title="Chile" href="https://www.amcharts.com/svg-maps/?map=chile">Chile</a></li>
+<li><a title="China" href="https://www.amcharts.com/svg-maps/?map=china">China</a></li>
+<li><a title="Christmas Island" href="https://www.amcharts.com/svg-maps/?map=christmasIsland">Christmas Island</a></li>
+<li><a title="Cocos Islands" href="https://www.amcharts.com/svg-maps/?map=cocosIslands">Cocos Islands</a></li>
+<li><a title="Colombia" href="https://www.amcharts.com/svg-maps/?map=colombia">Colombia</a></li>
+<li><a title="Comoros" href="https://www.amcharts.com/svg-maps/?map=comoros">Comoros</a></li>
+<li><a title="DR Congo" href="https://www.amcharts.com/svg-maps/?map=congoDR">DR Congo</a></li>
+<li><a title="Congo" href="https://www.amcharts.com/svg-maps/?map=congo">Congo</a></li>
+<li><a title="Continents - Russia split" href="https://www.amcharts.com/svg-maps/?map=continents">Continents - Russia split</a></li>
+<li><a title="Continents with Antarctica - Russia split" href="https://www.amcharts.com/svg-maps/?map=continentsWithAntarctica">Continents with Antarctica - Russia split</a></li>
+<li><a title="Cook Islands" href="https://www.amcharts.com/svg-maps/?map=cookIslands">Cook Islands</a></li>
+<li><a title="Costa Rica" href="https://www.amcharts.com/svg-maps/?map=costaRica">Costa Rica</a></li>
+<li><a title="Croatia" href="https://www.amcharts.com/svg-maps/?map=croatia">Croatia</a></li>
+<li><a title="Cuba" href="https://www.amcharts.com/svg-maps/?map=cuba">Cuba</a></li>
+<li><a title="Curacao" href="https://www.amcharts.com/svg-maps/?map=curacao">Curacao</a></li>
+<li><a title="Cyprus" href="https://www.amcharts.com/svg-maps/?map=cyprus">Cyprus</a></li>
+<li><a title="Cyprus - Northern Cyprus" href="https://www.amcharts.com/svg-maps/?map=cyprusNorthernCyprus">Cyprus - Northern Cyprus</a></li>
+<li><a title="Czech Republic" href="https://www.amcharts.com/svg-maps/?map=czechRepublic">Czech Republic</a></li>
+<li><a title="Denmark" href="https://www.amcharts.com/svg-maps/?map=denmark">Denmark</a></li>
+<li><a title="Djibouti" href="https://www.amcharts.com/svg-maps/?map=djibouti">Djibouti</a></li>
+<li><a title="Dominica" href="https://www.amcharts.com/svg-maps/?map=dominica">Dominica</a></li>
+<li><a title="Dominican Republic" href="https://www.amcharts.com/svg-maps/?map=dominicanRepublic">Dominican Republic</a></li>
+<li><a title="East Timor" href="https://www.amcharts.com/svg-maps/?map=eastTimor">East Timor</a></li>
+<li><a title="Ecuador" href="https://www.amcharts.com/svg-maps/?map=ecuador">Ecuador</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-3 col-xs-6">
+<ul>
+<li><a title="Egypt" href="https://www.amcharts.com/svg-maps/?map=egypt">Egypt</a></li>
+<li><a title="El Salvador" href="https://www.amcharts.com/svg-maps/?map=elSalvador">El Salvador</a></li>
+<li><a title="Equatorial Guinea" href="https://www.amcharts.com/svg-maps/?map=equatorialGuinea">Equatorial Guinea</a></li>
+<li><a title="Eritrea" href="https://www.amcharts.com/svg-maps/?map=eritrea">Eritrea</a></li>
+<li><a title="Estonia" href="https://www.amcharts.com/svg-maps/?map=estonia">Estonia</a></li>
+<li><a title="Ethiopia" href="https://www.amcharts.com/svg-maps/?map=ethiopia">Ethiopia</a></li>
+<li><a title="Falkland Islands" href="https://www.amcharts.com/svg-maps/?map=falklandIslands">Falkland Islands</a></li>
+<li><a title="Faroe Islands" href="https://www.amcharts.com/svg-maps/?map=faroeIslands">Faroe Islands</a></li>
+<li><a title="Fiji East" href="https://www.amcharts.com/svg-maps/?map=fijiEast">Fiji East</a></li>
+<li><a title="Fiji West" href="https://www.amcharts.com/svg-maps/?map=fijiWest">Fiji West</a></li>
+<li><a title="Finland" href="https://www.amcharts.com/svg-maps/?map=finland">Finland</a></li>
+<li><a title="France 2016" href="https://www.amcharts.com/svg-maps/?map=france2016">France 2016</a></li>
+<li><a title="France Departments" href="https://www.amcharts.com/svg-maps/?map=franceDepartments">France Departments</a></li>
+<li><a title="France" href="https://www.amcharts.com/svg-maps/?map=france">France</a></li>
+<li><a title="French Guiana" href="https://www.amcharts.com/svg-maps/?map=frenchGuiana">French Guiana</a></li>
+<li><a title="French Polynesia" href="https://www.amcharts.com/svg-maps/?map=frenchPolynesia">French Polynesia</a></li>
+<li><a title="Gabon" href="https://www.amcharts.com/svg-maps/?map=gabon">Gabon</a></li>
+<li><a title="Gambia" href="https://www.amcharts.com/svg-maps/?map=gambia">Gambia</a></li>
+<li><a title="Georgia" href="https://www.amcharts.com/svg-maps/?map=georgia">Georgia</a></li>
+<li><a title="Georgia with South Ossetia" href="https://www.amcharts.com/svg-maps/?map=georgiaSouthOssetia">Georgia with South Ossetia</a></li>
+<li><a title="Germany" href="https://www.amcharts.com/svg-maps/?map=germany">Germany</a></li>
+<li><a title="Ghana" href="https://www.amcharts.com/svg-maps/?map=ghana">Ghana</a></li>
+<li><a title="Gibraltar" href="https://www.amcharts.com/svg-maps/?map=gibraltar">Gibraltar</a></li>
+<li><a title="Greece" href="https://www.amcharts.com/svg-maps/?map=greece">Greece</a></li>
+<li><a title="Greenland" href="https://www.amcharts.com/svg-maps/?map=greenland">Greenland</a></li>
+<li><a title="Guadeloupe" href="https://www.amcharts.com/svg-maps/?map=guadeloupe">Guadeloupe</a></li>
+<li><a title="Guam" href="https://www.amcharts.com/svg-maps/?map=guam">Guam</a></li>
+<li><a title="Guatemala" href="https://www.amcharts.com/svg-maps/?map=guatemala">Guatemala</a></li>
+<li><a title="Guinea-Bissau" href="https://www.amcharts.com/svg-maps/?map=guineaBissau">Guinea-Bissau</a></li>
+<li><a title="Guinea" href="https://www.amcharts.com/svg-maps/?map=guinea">Guinea</a></li>
+<li><a title="Guyana" href="https://www.amcharts.com/svg-maps/?map=guyana">Guyana</a></li>
+<li><a title="Haiti" href="https://www.amcharts.com/svg-maps/?map=haiti">Haiti</a></li>
+<li><a title="Honduras" href="https://www.amcharts.com/svg-maps/?map=honduras">Honduras</a></li>
+<li><a title="Hong Kong" href="https://www.amcharts.com/svg-maps/?map=hongKong">Hong Kong</a></li>
+<li><a title="Hungary" href="https://www.amcharts.com/svg-maps/?map=hungary">Hungary</a></li>
+<li><a title="Iceland" href="https://www.amcharts.com/svg-maps/?map=iceland">Iceland</a></li>
+<li><a title="India" href="https://www.amcharts.com/svg-maps/?map=india">India</a></li>
+<li><a title="Indonesia" href="https://www.amcharts.com/svg-maps/?map=indonesia">Indonesia</a></li>
+<li><a title="Iran" href="https://www.amcharts.com/svg-maps/?map=iran">Iran</a></li>
+<li><a title="Iraq" href="https://www.amcharts.com/svg-maps/?map=iraq">Iraq</a></li>
+<li><a title="Ireland" href="https://www.amcharts.com/svg-maps/?map=ireland">Ireland</a></li>
+<li><a title="Isle of Man" href="https://www.amcharts.com/svg-maps/?map=isleOfMan">Isle of Man</a></li>
+<li><a title="Israel" href="https://www.amcharts.com/svg-maps/?map=israel">Israel</a></li>
+<li><a title="Israel-Palestine" href="https://www.amcharts.com/svg-maps/?map=israelPalestine">Israel-Palestine</a></li>
+<li><a title="Italy" href="https://www.amcharts.com/svg-maps/?map=italy">Italy</a></li>
+<li><a title="Ivory Coast" href="https://www.amcharts.com/svg-maps/?map=ivoryCoast">Ivory Coast</a></li>
+<li><a title="Jamaica" href="https://www.amcharts.com/svg-maps/?map=jamaica">Jamaica</a></li>
+<li><a title="Japan" href="https://www.amcharts.com/svg-maps/?map=japan">Japan</a></li>
+<li><a title="Jersey" href="https://www.amcharts.com/svg-maps/?map=jersey">Jersey</a></li>
+<li><a title="Jordan" href="https://www.amcharts.com/svg-maps/?map=jordan">Jordan</a></li>
+<li><a title="Kazakhstan" href="https://www.amcharts.com/svg-maps/?map=kazakhstan">Kazakhstan</a></li>
+<li><a title="Kenya" href="https://www.amcharts.com/svg-maps/?map=kenya">Kenya</a></li>
+<li><a title="Kiribati" href="https://www.amcharts.com/svg-maps/?map=kiribati">Kiribati</a></li>
+<li><a title="Kosovo" href="https://www.amcharts.com/svg-maps/?map=kosovo">Kosovo</a></li>
+<li><a title="Kuwait" href="https://www.amcharts.com/svg-maps/?map=kuwait">Kuwait</a></li>
+<li><a title="Kyrgyzstan" href="https://www.amcharts.com/svg-maps/?map=kyrgyzstan">Kyrgyzstan</a></li>
+<li><a title="Laos" href="https://www.amcharts.com/svg-maps/?map=laos">Laos</a></li>
+<li><a title="Latvia" href="https://www.amcharts.com/svg-maps/?map=latvia">Latvia</a></li>
+<li><a title="Lebanon" href="https://www.amcharts.com/svg-maps/?map=lebanon">Lebanon</a></li>
+<li><a title="Lesotho" href="https://www.amcharts.com/svg-maps/?map=lesotho">Lesotho</a></li>
+<li><a title="Liberia" href="https://www.amcharts.com/svg-maps/?map=liberia">Liberia</a></li>
+<li><a title="Libya" href="https://www.amcharts.com/svg-maps/?map=libya">Libya</a></li>
+<li><a title="Liechtenstein" href="https://www.amcharts.com/svg-maps/?map=liechtenstein">Liechtenstein</a></li>
+<li><a title="Lithuania" href="https://www.amcharts.com/svg-maps/?map=lithuania">Lithuania</a></li>
+<li><a title="Luxembourg" href="https://www.amcharts.com/svg-maps/?map=luxembourg">Luxembourg</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-3 col-xs-6">
+<ul>
+<li><a title="Macao" href="https://www.amcharts.com/svg-maps/?map=macao">Macao</a></li>
+<li><a title="Macedonia" href="https://www.amcharts.com/svg-maps/?map=macedonia">Macedonia</a></li>
+<li><a title="Magdagascar" href="https://www.amcharts.com/svg-maps/?map=madagascar">Magdagascar</a></li>
+<li><a title="Malawi" href="https://www.amcharts.com/svg-maps/?map=malawi">Malawi</a></li>
+<li><a title="Malaysia" href="https://www.amcharts.com/svg-maps/?map=malaysia">Malaysia</a></li>
+<li><a title="Maldives" href="https://www.amcharts.com/svg-maps/?map=maldives">Maldives</a></li>
+<li><a title="Mali" href="https://www.amcharts.com/svg-maps/?map=mali">Mali</a></li>
+<li><a title="Malta" href="https://www.amcharts.com/svg-maps/?map=malta">Malta</a></li>
+<li><a title="Marshall Islands" href="https://www.amcharts.com/svg-maps/?map=marshallIslands">Marshall Islands</a></li>
+<li><a title="Martinique" href="https://www.amcharts.com/svg-maps/?map=martinique">Martinique</a></li>
+<li><a title="Mauritania" href="https://www.amcharts.com/svg-maps/?map=mauritania">Mauritania</a></li>
+<li><a title="Mauritius" href="https://www.amcharts.com/svg-maps/?map=mauritius">Mauritius</a></li>
+<li><a title="Mayotte" href="https://www.amcharts.com/svg-maps/?map=mayotte">Mayotte</a></li>
+<li><a title="Mexico" href="https://www.amcharts.com/svg-maps/?map=mexico">Mexico</a></li>
+<li><a title="Micronesia" href="https://www.amcharts.com/svg-maps/?map=micronesia">Micronesia</a></li>
+<li><a title="Moldova" href="https://www.amcharts.com/svg-maps/?map=moldova">Moldova</a></li>
+<li><a title="Monaco" href="https://www.amcharts.com/svg-maps/?map=monaco">Monaco</a></li>
+<li><a title="Mongolia" href="https://www.amcharts.com/svg-maps/?map=mongolia">Mongolia</a></li>
+<li><a title="Montenegro" href="https://www.amcharts.com/svg-maps/?map=montenegro">Montenegro</a></li>
+<li><a title="Montserrat" href="https://www.amcharts.com/svg-maps/?map=montserrat">Montserrat</a></li>
+<li><a title="Moroco" href="https://www.amcharts.com/svg-maps/?map=morocco">Moroco</a></li>
+<li><a title="Morocco-Western Sahara" href="https://www.amcharts.com/svg-maps/?map=moroccoWesternSahara">Morocco-Western Sahara</a></li>
+<li><a title="Mozambique" href="https://www.amcharts.com/svg-maps/?map=mozambique">Mozambique</a></li>
+<li><a title="Myanmar" href="https://www.amcharts.com/svg-maps/?map=myanmar">Myanmar</a></li>
+<li><a title="Namibia" href="https://www.amcharts.com/svg-maps/?map=namibia">Namibia</a></li>
+<li><a title="Nauru" href="https://www.amcharts.com/svg-maps/?map=nauru">Nauru</a></li>
+<li><a title="Nepal" href="https://www.amcharts.com/svg-maps/?map=nepal">Nepal</a></li>
+<li><a title="Netherlands" href="https://www.amcharts.com/svg-maps/?map=netherlands">Netherlands</a></li>
+<li><a title="New Caledonia" href="https://www.amcharts.com/svg-maps/?map=newCaledonia">New Caledonia</a></li>
+<li><a title="New Zealand" href="https://www.amcharts.com/svg-maps/?map=newZealand">New Zealand</a></li>
+<li><a title="Nicaragua" href="https://www.amcharts.com/svg-maps/?map=nicaragua">Nicaragua</a></li>
+<li><a title="Niger" href="https://www.amcharts.com/svg-maps/?map=niger">Niger</a></li>
+<li><a title="Nigeria" href="https://www.amcharts.com/svg-maps/?map=nigeria">Nigeria</a></li>
+<li><a title="Niue" href="https://www.amcharts.com/svg-maps/?map=niue">Niue</a></li>
+<li><a title="North Korea" href="https://www.amcharts.com/svg-maps/?map=northKorea">North Korea</a></li>
+<li><a title="Northern Mariana Islands" href="https://www.amcharts.com/svg-maps/?map=northernMarianaIslands">Northern Mariana Islands</a></li>
+<li><a title="Norway" href="https://www.amcharts.com/svg-maps/?map=norway">Norway</a></li>
+<li><a title="Oman" href="https://www.amcharts.com/svg-maps/?map=oman">Oman</a></li>
+<li><a title="Pakistan" href="https://www.amcharts.com/svg-maps/?map=pakistan">Pakistan</a></li>
+<li><a title="Palau" href="https://www.amcharts.com/svg-maps/?map=palau">Palau</a></li>
+<li><a title="Palestine" href="https://www.amcharts.com/svg-maps/?map=palestine">Palestine</a></li>
+<li><a title="Panama" href="https://www.amcharts.com/svg-maps/?map=panama">Panama</a></li>
+<li><a title="Papua New Guinea" href="https://www.amcharts.com/svg-maps/?map=papuaNewGuinea">Papua New Guinea</a></li>
+<li><a title="Paraguay" href="https://www.amcharts.com/svg-maps/?map=paraguay">Paraguay</a></li>
+<li><a title="Peru" href="https://www.amcharts.com/svg-maps/?map=peru">Peru</a></li>
+<li><a title="Philippines" href="https://www.amcharts.com/svg-maps/?map=philippines">Philippines</a></li>
+<li><a title="Pitcairn Islands" href="https://www.amcharts.com/svg-maps/?map=pitcairnIslands">Pitcairn Islands</a></li>
+<li><a title="Poland" href="https://www.amcharts.com/svg-maps/?map=poland">Poland</a></li>
+<li><a title="Portugal" href="https://www.amcharts.com/svg-maps/?map=portugal">Portugal</a></li>
+<li><a title="Portugal Regions" href="https://www.amcharts.com/svg-maps/?map=portugalRegions">Portugal Regions</a></li>
+<li><a title="Puerto Rico" href="https://www.amcharts.com/svg-maps/?map=puertoRico">Puerto Rico</a></li>
+<li><a title="Qatar" href="https://www.amcharts.com/svg-maps/?map=qatar">Qatar</a></li>
+<li><a title="Reunion" href="https://www.amcharts.com/svg-maps/?map=reunion">Reunion</a></li>
+<li><a title="Romania" href="https://www.amcharts.com/svg-maps/?map=romania">Romania</a></li>
+<li><a title="Russia" href="https://www.amcharts.com/svg-maps/?map=russia">Russia</a></li>
+<li><a title="Rwanda" href="https://www.amcharts.com/svg-maps/?map=rwanda">Rwanda</a></li>
+<li><a title="Saint Pierre and Miquelon" href="https://www.amcharts.com/svg-maps/?map=saintPierreMiquelon">Saint Pierre and Miquelon</a></li>
+<li><a title="Samoa" href="https://www.amcharts.com/svg-maps/?map=samoa">Samoa</a></li>
+<li><a title="San Marino" href="https://www.amcharts.com/svg-maps/?map=sanMarino">San Marino</a></li>
+<li><a title="Saudi Arabia" href="https://www.amcharts.com/svg-maps/?map=saudiArabia">Saudi Arabia</a></li>
+<li><a title="Senegal" href="https://www.amcharts.com/svg-maps/?map=senegal">Senegal</a></li>
+<li><a title="Serbia" href="https://www.amcharts.com/svg-maps/?map=serbia">Serbia</a></li>
+<li><a title="Serbia No Kosovo" href="https://www.amcharts.com/svg-maps/?map=serbiaNoKosovo">Serbia No Kosovo</a></li>
+<li><a title="Sierra Leone" href="https://www.amcharts.com/svg-maps/?map=sierraLeone">Sierra Leone</a></li>
+<li><a title="Singapore" href="https://www.amcharts.com/svg-maps/?map=singapore">Singapore</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-3 col-xs-6">
+<ul>
+<li><a title="Sint Maarten" href="https://www.amcharts.com/svg-maps/?map=sintMaarten">Sint Maarten</a></li>
+<li><a title="Slovakia" href="https://www.amcharts.com/svg-maps/?map=slovakia">Slovakia</a></li>
+<li><a title="Slovenia" href="https://www.amcharts.com/svg-maps/?map=slovenia">Slovenia</a></li>
+<li><a title="Somalia" href="https://www.amcharts.com/svg-maps/?map=somalia">Somalia</a></li>
+<li><a title="South Africa" href="https://www.amcharts.com/svg-maps/?map=southAfrica">South Africa</a></li>
+<li><a title="South Korea" href="https://www.amcharts.com/svg-maps/?map=southKorea">South Korea</a></li>
+<li><a title="South Sudan" href="https://www.amcharts.com/svg-maps/?map=southSudan">South Sudan</a></li>
+<li><a title="Spain - Custom" href="https://www.amcharts.com/svg-maps/?map=spain2">Spain - Custom</a></li>
+<li><a title="Spain" href="https://www.amcharts.com/svg-maps/?map=spain">Spain</a></li>
+<li><a title="Spain Provinces" href="https://www.amcharts.com/svg-maps/?map=spainProvinces">Spain Provinces</a></li>
+<li><a title="Sri Lanka" href="https://www.amcharts.com/svg-maps/?map=sriLanka">Sri Lanka</a></li>
+<li><a title="St Helena" href="https://www.amcharts.com/svg-maps/?map=stHelena">St Helena</a></li>
+<li><a title="St. Kitts and Nevis" href="https://www.amcharts.com/svg-maps/?map=stKittsNevis">St. Kitts and Nevis</a></li>
+<li><a title="St. Lucia" href="https://www.amcharts.com/svg-maps/?map=stLucia">St. Lucia</a></li>
+<li><a title="Saint Vincent and the Grenadines" href="https://www.amcharts.com/svg-maps/?map=stVincent">Saint Vincent and the Grenadines</a></li>
+<li><a title="Sudan" href="https://www.amcharts.com/svg-maps/?map=sudan">Sudan</a></li>
+<li><a title="Suriname" href="https://www.amcharts.com/svg-maps/?map=suriname">Suriname</a></li>
+<li><a title="Svalbard and Jan Mayen" href="https://www.amcharts.com/svg-maps/?map=svalbardJanMayen">Svalbard and Jan Mayen</a></li>
+<li><a title="Swaziland" href="https://www.amcharts.com/svg-maps/?map=swaziland">Swaziland</a></li>
+<li><a title="Sweden" href="https://www.amcharts.com/svg-maps/?map=sweden">Sweden</a></li>
+<li><a title="Switzerland" href="https://www.amcharts.com/svg-maps/?map=switzerland">Switzerland</a></li>
+<li><a title="Syria" href="https://www.amcharts.com/svg-maps/?map=syria">Syria</a></li>
+<li><a title="Taiwan" href="https://www.amcharts.com/svg-maps/?map=taiwan">Taiwan</a></li>
+<li><a title="Tajikistan" href="https://www.amcharts.com/svg-maps/?map=tajikistan">Tajikistan</a></li>
+<li><a title="Tanzania" href="https://www.amcharts.com/svg-maps/?map=tanzania">Tanzania</a></li>
+<li><a title="Thailand" href="https://www.amcharts.com/svg-maps/?map=thailand">Thailand</a></li>
+<li><a title="Tibet" href="https://www.amcharts.com/svg-maps/?map=tibet">Tibet</a></li>
+<li><a title="Togo" href="https://www.amcharts.com/svg-maps/?map=togo">Togo</a></li>
+<li><a title="Tonga" href="https://www.amcharts.com/svg-maps/?map=tonga">Tonga</a></li>
+<li><a title="Trinidad and Tobago" href="https://www.amcharts.com/svg-maps/?map=trinidadAndTobago">Trinidad and Tobago</a></li>
+<li><a title="Tunisia" href="https://www.amcharts.com/svg-maps/?map=tunisia">Tunisia</a></li>
+<li><a title="Turkey" href="https://www.amcharts.com/svg-maps/?map=turkey">Turkey</a></li>
+<li><a title="Turkmenistan" href="https://www.amcharts.com/svg-maps/?map=turkmenistan">Turkmenistan</a></li>
+<li><a title="Tuvalu" href="https://www.amcharts.com/svg-maps/?map=tuvalu">Tuvalu</a></li>
+<li><a title="Uganda" href="https://www.amcharts.com/svg-maps/?map=uganda">Uganda</a></li>
+<li><a title="UK Counties" href="https://www.amcharts.com/svg-maps/?map=ukCounties">UK Counties</a></li>
+<li><a title="Ukraine" href="https://www.amcharts.com/svg-maps/?map=ukraine">Ukraine</a></li>
+<li><a title="United Arab Emirates" href="https://www.amcharts.com/svg-maps/?map=unitedArabEmirates">United Arab Emirates</a></li>
+<li><a title="United Kingdom" href="https://www.amcharts.com/svg-maps/?map=unitedKingdom">United Kingdom</a></li>
+<li><a title="Uruguay" href="https://www.amcharts.com/svg-maps/?map=uruguay">Uruguay</a></li>
+<li><a title="U.S. Virgin Islands" href="https://www.amcharts.com/svg-maps/?map=usVirginIslands">U.S. Virgin Islands</a></li>
+<li><a title="USA: Mainland Mercator-calibrated" href="https://www.amcharts.com/svg-maps/?map=usa2">USA: Mainland Mercator-calibrated</a></li>
+<li><a title="USA" href="https://www.amcharts.com/svg-maps/?map=usa">USA</a></li>
+<li><a title="USA: Mercator-calibrated" href="https://www.amcharts.com/svg-maps/?map=usaMercator">USA: Mercator-calibrated</a></li>
+<li><a title="USA Territories &amp; Associated States" href="https://www.amcharts.com/svg-maps/?map=usaTerritories2">USA Territories & Associated States</a></li>
+<li><a title="USA Territories" href="https://www.amcharts.com/svg-maps/?map=usaTerritories">USA Territories</a></li>
+<li><a title="Uzebekistan" href="https://www.amcharts.com/svg-maps/?map=uzbekistan">Uzebekistan</a></li>
+<li><a title="Vanuatu" href="https://www.amcharts.com/svg-maps/?map=vanuatu">Vanuatu</a></li>
+<li><a title="Vatican City" href="https://www.amcharts.com/svg-maps/?map=vaticanCity">Vatican City</a></li>
+<li><a title="Venezuela" href="https://www.amcharts.com/svg-maps/?map=venezuela">Venezuela</a></li>
+<li><a title="Vietnam" href="https://www.amcharts.com/svg-maps/?map=vietnam">Vietnam</a></li>
+<li><a title="Wallis and Futuna" href="https://www.amcharts.com/svg-maps/?map=wallisFutuna">Wallis and Futuna</a></li>
+<li><a title="World" href="https://www.amcharts.com/svg-maps/?map=world">World</a></li>
+<li><a title="World India" href="https://www.amcharts.com/svg-maps/?map=worldIndia">World India</a></li>
+<li><a title="World - Kashmir 2" href="https://www.amcharts.com/svg-maps/?map=worldKashmir2">World - Kashmir 2</a></li>
+<li><a title="World - Kashmir 2 with Antarctica" href="https://www.amcharts.com/svg-maps/?map=worldKashmir2WithAntarctica">World - Kashmir 2 with Antarctica</a></li>
+<li><a title="World with Kashmir" href="https://www.amcharts.com/svg-maps/?map=worldKashmir">World with Kashmir</a></li>
+<li><a title="World - Russia Split" href="https://www.amcharts.com/svg-maps/?map=worldRussiaSplit">World - Russia Split</a></li>
+<li><a title="World - Russia Split with Antarctica" href="https://www.amcharts.com/svg-maps/?map=worldRussiaSplitWithAntarctica">World - Russia Split with Antarctica</a></li>
+<li><a title="World with Antarctica" href="https://www.amcharts.com/svg-maps/?map=worldWithAntarctica">World with Antarctica</a></li>
+<li><a title="Yemen" href="https://www.amcharts.com/svg-maps/?map=yemen">Yemen</a></li>
+<li><a title="Zambia" href="https://www.amcharts.com/svg-maps/?map=zambia">Zambia</a></li>
+<li><a title="Zimbabwe" href="https://www.amcharts.com/svg-maps/?map=zimbabwe">Zimbabwe</a></li>
+</ul>
+</div>
+</div>
+</div> 
+</article> 
+</main> 
+</div> 
+</div> 
+<footer class="site-footer" role="banner">
+<div class="content-col">
+<div class="row">
+<div class="col-md-4 col-sm-12">
+<div>
+<a href="https://www.amcharts.com/" id="logo2" rel="home">amCharts</a>
+</div> 
+</div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<div role="navigation"><h4>More info</h4><div class="menu-info-container"><ul id="menu-info" class="menu"><li id="menu-item-76" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a href="https://groups.google.com/forum/#!forum/amcharts">Release Announcements</a></li>
+<li id="menu-item-6844" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6844"><a href="https://www.amcharts.com/accessibility/">Accessibility Features</a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://www.amcharts.com/about/">About amCharts</a></li>
+<li id="menu-item-7079" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7079"><a href="https://www.amcharts.com/blog/">amCharts Blog</a></li>
+<li id="menu-item-8770" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8770"><a href="https://www.amcharts.com/kbase/?recent=1">New in Knowledge Base</a></li>
+</ul></div></div> </div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<div role="navigation"><h4>Products</h4><div class="menu-products-container"><ul id="menu-products" class="menu"><li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="https://www.amcharts.com/javascript-charts/">JavaScript Charts</a></li>
+<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="https://www.amcharts.com/stock-chart/">JavaScript Stock Chart</a></li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://www.amcharts.com/javascript-maps/">JavaScript Maps</a></li>
+<li id="menu-item-8766" class="menu-item menu-item-type-plugin menu-item-object-cpt_archive menu-item-8766"><a href="https://www.amcharts.com/plugins/">Plugins</a></li>
+<li id="menu-item-8769" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8769"><a href="https://wordpress.org/plugins/amcharts-charts-and-maps/">WordPress Plugin</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="https://www.amcharts.com/products/">All products and tools</a></li>
+</ul></div></div> </div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<div role="navigation"><h4>Tools &#038; Resources</h4><div class="menu-tools-resources-container"><ul id="menu-tools-resources" class="menu"><li id="menu-item-83" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-83"><a href="https://live.amcharts.com/">Online Chart Editor</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="https://pixelmap.amcharts.com/">Pixel Map Generator</a></li>
+<li id="menu-item-8768" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-7030 current_page_item menu-item-8768"><a href="https://www.amcharts.com/svg-maps/">Free SVG Maps</a></li>
+<li id="menu-item-6845" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6845"><a href="https://www.amcharts.com/visited_countries/">Visited Countries Map</a></li>
+<li id="menu-item-6846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6846"><a href="https://www.amcharts.com/visited_states/">Visited States Map</a></li>
+<li id="menu-item-8767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8767"><a href="https://weather.amcharts.com/">Weather Map</a></li>
+</ul></div></div> </div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<div role="navigation"><h4>Contact Us</h4><div class="menu-contact-container"><ul id="menu-contact" class="menu"><li id="menu-item-85" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a href="mailto:contact@amcharts.com">contact@amcharts.com</a></li>
+<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://www.amcharts.com/support/">Support Center</a></li>
+</ul></div></div> </div>
+</div>
+<div class="row">
+<div class="col-md-8 col-md-push-4 col-sm-12 subfooter">
+<div class="row">
+<div class="col-md-6 col-sm-12 col-xs-12" role="nav">
+<div class="menu-social-container"><ul id="social-menu" class="menu"><li id="menu-item-132" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-132"><a href="https://www.facebook.com/amcharts"><i class="icon icon-facebook"></i>Facebook</a></li>
+<li id="menu-item-133" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-133"><a href="https://www.twitter.com/amcharts"><i class="icon icon-twitter"></i>Twitter</a></li>
+<li id="menu-item-134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-134"><a href="https://plus.google.com/+amcharts/"><i class="icon icon-google"></i>Google+</a></li>
+<li id="menu-item-135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135"><a href="https://www.linkedin.com/company/amcharts"><i class="icon icon-linkedin"></i>LinkedIn</a></li>
+</ul></div> </div>
+<div class="col-md-6 col-sm-12 col-xs-12 pull-right" id="copyright" role="contentinfo">
+Copyright © 2006-2017, amCharts. All rights reserved. </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script type='text/javascript' src='https://www.amcharts.com/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts2/js/main.js?ver=20170308-01'></script>
+<script type='text/javascript' src='https://www.amcharts.com/wp-content/themes/amcharts2/js/demo.js?ver=20170308-01'></script>
+<script type='text/javascript' src='https://www.amcharts.com/wp-includes/js/wp-embed.min.js?ver=4.7.3'></script>
+<script type='text/javascript' src='https://www.amcharts.com/lib/3/ammap.js?ver=20170308-01'></script>
+<script type='text/javascript' src='https://www.amcharts.com/lib/3/themes/dark.js?ver=20170308-01'></script>
+<script>
+AmCharts.makeChart("chartdiv", {
+        "type": "map",
+        "theme": "dark",
+        "dataProvider" : {
+          "mapURL": "https://www.amcharts.com/lib/3/maps/svg/caribbeanNetherlandsHigh.svg",
+          "getAreasFromMap": true
+        },
+        "areasSettings": {
+          "autoZoom": true,
+          "selectedColor": "#CC0000"
+        }
+      });</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22221037-1', 'auto');
+  ga('send', 'pageview');
+  ga('require', 'linker');
+  ga('linker:autoLink', ['amcharts.cleverbridge.com']);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2b927c5092","applicationID":"5849300","transactionName":"NABbZxNUWRAEWhcKWA1KeFAVXFgNSkkCBFI=","queueTime":0,"applicationTime":806,"atts":"GEdYEVtOSh4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

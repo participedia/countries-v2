@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- (c) ammap.com | SVG map of Curacao - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="country-map" viewbox="0.62 0.0 798.76 641.72">
+ <defs>
+  <style type="text/css">
+   path.land {stroke: #d8382c; fill: #d8382c;}
+  </style>
+  <amcharts:ammap projection="mercator" leftlongitude="-69.1624547" toplatitude="12.3927182" rightlongitude="-68.73046875" bottomlatitude="12.0312619264">
+  </amcharts:ammap>
+  <!-- All areas are listed in the line below. You can use this list in your script. -->
+  <!--{id:"CW"}-->
+ </defs>
+ <g>
+  <path id="CW" title="Curaçao" class="land" d="M799.38,641.72L722.54,555.97L620.4,415.63L304.3,318.62L0.62,0L12.97,181.18L353.47,504.67L799.38,641.72z">
+  </path>
+ </g>
+</svg>
